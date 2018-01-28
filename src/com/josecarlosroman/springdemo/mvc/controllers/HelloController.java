@@ -1,4 +1,4 @@
-package com.josecarlosroman.springdemo.mvc;
+package com.josecarlosroman.springdemo.mvc.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 
