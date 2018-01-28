@@ -59,5 +59,12 @@
 		
 		<input type="submit" value="Submit" />
 	</form:form>
+	
+	<br><br>
+	
+	<!-- Spring forms automatically add the CSRF token -->
+	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
+		<input type="submit" value="Log out" />
+	</form:form>
 </body>
 </html>

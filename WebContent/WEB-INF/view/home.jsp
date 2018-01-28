@@ -12,6 +12,7 @@
 	
 	<br><br>
 	
-	<a href="student/showForm">Student form</a>
+	<a href="student/showForm">Student form</a> (Requires authentication, user and pass => student)
+	
 </body>
 </html>
