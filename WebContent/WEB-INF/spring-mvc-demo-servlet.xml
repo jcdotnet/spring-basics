@@ -5,7 +5,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:security="http://www.springframework.org/schema/security" 
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
     	http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -15,6 +15,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
+		<!-- we are using Java configuration for security so we can remove those schemas  -->
 
 	<!-- Component scanning -->
 	<context:component-scan base-package="com.josecarlosroman.springdemo" />
@@ -30,8 +31,10 @@
 	</bean>
 	
 	<!-- Spring basic security -->
-	<!-- <security:http pattern="/login*" security="none"/> --> <!-- uncomment if /login is intercepted -->
-	
+	<!-- USING JAVA CONFIGURATION INSTEAD, we can also remove the security schemas above -->
+		
+	<!-- <security:http pattern="/login*" security="none"/> --> <!-- uncomment if /login is intercepted --> 
+	<!--
 	<security:http>
 	    <security:intercept-url pattern="/student/**" access="hasRole('USER')" />
 	 	<security:form-login login-page='/login' login-processing-url="/doLogin" /> 
@@ -48,7 +51,9 @@
 	</security:authentication-manager>
 	
 	<bean id ="passwordEncoder" class ="org.springframework.security.crypto.password.NoOpPasswordEncoder" factory-method="getInstance" />
-
+    -->
+    <!-- END Spring basic security-->
+    
 </beans>
 
 
