@@ -1,0 +1,19 @@
+target
+.mvn/wrapper/maven-wrapper.jar
+.smarttomcat
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# eclipse project files
+.settings
+.classpath
+.project
+
+# compiled classes and libraries
+build

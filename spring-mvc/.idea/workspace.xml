@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="19bd081a-3900-4adc-bf80-c1fb4987ee94" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../spring-boot/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/src/main/java/com/josecarlosroman/basics/spring/boot/demo/SpringBootDemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/src/main/java/com/josecarlosroman/basics/spring/boot/demo/rest/HelloRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-boot/src/test/java/com/josecarlosroman/basics/spring/boot/demo/SpringBootDemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/hello-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/hello-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/hello-home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/hello-home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/hello.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/student-confirmation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student-confirmation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebContent/WEB-INF/view/student-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/config/SecurityWebApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/config/SecurityWebApplicationInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/config/WebApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/config/WebApplicationDispatcherServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/mvc/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/josecarlosroman/basics/spring/mvc/demo/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/mvc/controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/josecarlosroman/basics/spring/mvc/demo/controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/mvc/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/josecarlosroman/basics/spring/mvc/demo/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/mvc/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/josecarlosroman/basics/spring/mvc/demo/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/com/josecarlosroman/springdemo/mvc/controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/josecarlosroman/basics/spring/mvc/demo/controllers/StudentController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="30gNfSMZdENmOUYkorKTX6yjz4i" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Spring MVC Demo.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Tomcat: demo.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-mvc" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-mvc" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Spring MVC Demo" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Program Files\Apache Software Foundation\Tomcat 11.0" />
+      <option name="contextPath" value="/" />
+      <option name="docBase" value="C:\work\learning\Java\spring-basics\spring-mvc\src\main\webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/11.0.9" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../Program Files/Apache Software Foundation/Tomcat 11.0" />
+          <option name="version" value="11.0.9.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="demo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19bd081a-3900-4adc-bf80-c1fb4987ee94" name="Changes" comment="" />
+      <created>1754045358692</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754045358692</updated>
+    </task>
+    <servers />
+  </component>
+</project>

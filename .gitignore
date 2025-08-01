@@ -1,8 +1,0 @@
-# eclipse project files
-.settings
-.classpath
-.project
-
-# compiled classes and libraries
-build
-WebContent/WEB-INF/lib
