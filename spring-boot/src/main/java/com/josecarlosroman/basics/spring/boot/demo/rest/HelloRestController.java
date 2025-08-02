@@ -12,4 +12,9 @@ public class HelloRestController {
         return "Hello World";
     }
 
+    // expose "/beautiful" endpoint
+    @GetMapping("/beautiful")
+    public String SayBeautiful() {
+        return "Hello, Beautiful World!";
+    }
 }
