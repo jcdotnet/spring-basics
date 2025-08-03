@@ -40,15 +40,19 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 		<!-- Starter for using Actuator, which exposes endpoints to monitor and manage the app -->
+		<!--
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		-->
 		<!-- Starter for using Spring Security -->
+		<!--
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
