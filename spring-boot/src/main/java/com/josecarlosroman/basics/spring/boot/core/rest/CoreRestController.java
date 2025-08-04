@@ -2,6 +2,7 @@ package com.josecarlosroman.basics.spring.boot.core.rest;
 
 import com.josecarlosroman.basics.spring.boot.core.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,7 @@ public class CoreRestController {
     // the Autowired annotation tells Spring to inject a dependency
     // @Autowired is optional when we have only one constructor
     @Autowired
-    public CoreRestController(Coach theCoach) {
+    public CoreRestController(@Qualifier("cricketCoach") Coach theCoach) {
         myCoach = theCoach;
     }
 
