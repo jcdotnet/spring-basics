@@ -13,8 +13,25 @@ public class CoreRestController {
 
     // the Autowired annotation tells Spring to inject a dependency
     // @Autowired is optional when we have only one constructor
+    /*
+    @Autowired
+    public CoreRestController(Coach theCoach) {
+        myCoach = theCoach;
+    }*/
+
+    // Qualifier: multiple Coach implementations and we choose the coach
+    /*
     @Autowired
     public CoreRestController(@Qualifier("cricketCoach") Coach theCoach) {
+        myCoach = theCoach;
+    }
+    */
+
+    // Primary annotation: multiple Coach implementations
+    // we don't care which coach, you coaches figure it out!
+    // we go back to our original ctor and receive the coach
+    @Autowired
+    public CoreRestController(Coach theCoach) {
         myCoach = theCoach;
     }
 
