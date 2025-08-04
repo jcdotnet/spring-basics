@@ -20,20 +20,20 @@ public class CoreRestController {
     }*/
 
     // Qualifier: multiple Coach implementations and we choose the coach
-    /*
     @Autowired
     public CoreRestController(@Qualifier("cricketCoach") Coach theCoach) {
         myCoach = theCoach;
     }
-    */
 
     // Primary annotation: multiple Coach implementations
     // we don't care which coach, you coaches figure it out!
     // we go back to our original ctor and receive the coach
+    /*
     @Autowired
     public CoreRestController(Coach theCoach) {
         myCoach = theCoach;
     }
+    */
 
     // we can also use setter injection (and method injection)
     /*
