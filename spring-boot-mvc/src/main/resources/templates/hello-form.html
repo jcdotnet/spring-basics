@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World Demo</title>
+    <link rel="stylesheet" th:href="@{/css/hello-world.css}">
+</head>
+<body class="hello-page">
+    <div class="card">
+        <h1>Hello <span th:text=" ${param.name} ?: ''"></span></h1>
+        <p th:text="'Time on the server is ' + ${theDate}" />
+
+        <div th:if="${param.name==null}">
+            <form th:action="@{/hello-form}" method="GET">
+                <label for="form-name">
+                    <input type="text" name="name" id="form-name" placeholder="What's your name?" />
+                </label>
+                <input type="submit" />
+            </form>
+        </div>
+        <div th:unless="${param.name==null}">
+            <p th:if="${theMessage.length>0}"> <span th:text="${theMessage}"></span></p>
+            <a th:href="@{/hello-form}">Go back</a>
+        </div>
+    </div>
+</body>
+</html>

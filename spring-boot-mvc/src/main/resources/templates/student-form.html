@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form th:action="@{/student/process-form}" th:object="${student}" method="POST">
+
+        <label for="first-name">
+            First Name:
+            <input type="text" th:field="*{firstName}" id="first-name">
+        </label>
+
+        <label>
+            Last Name: <input type="text" th:field="*{lastName}">
+        </label>
+        <br>
+        Province:
+        <select th:field="*{province}">
+            <!-- using the data from the model -->
+            <option th:each="tempProvince: ${provinces}" th:value="${tempProvince}" th:text="${tempProvince}"></option>
+            <!--
+            <option th:value="Almería">Almería</option>
+            <option th:value="Cádiz">Cádiz</option>
+            <option th:value="Córdoba">Córdoba</option>
+            <option th:value="Granada">Granada</option>
+            <option th:value="Huelva">Huelva</option>
+            <option th:value="Jaén">Jaén</option>
+            <option th:value="Málaga">Málaga</option>
+            <option th:value="Sevilla">Sevilla</option>
+            -->
+        </select>
+        <br>
+        Which programming language are you interested in?
+        <input type="radio" th:field="*{favoriteLanguage}"
+               th:each="tempLanguage : ${languages}"
+               th:value="${tempLanguage}"
+               th:text="${tempLanguage}"
+        />
+        <!--
+        <input type="radio" th:field="*{favoriteLanguage}" value="Java"/>Java
+        <input type="radio" th:field="*{favoriteLanguage}" value="C#">C#
+        <input type="radio" th:field="*{favoriteLanguage}" value="JavaScript">JavaScript
+        <input type="radio" th:field="*{favoriteLanguage}" value="PHP">PHP
+        -->
+
+        <br>
+
+        Courses to take:
+        <input type="checkbox" th:field="*{takenCourses}"
+               th:each="course:${courses}"
+               th:value="${course}"
+               th:text="${course}"
+        />
+
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

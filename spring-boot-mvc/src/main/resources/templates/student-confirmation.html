@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Confirmation Form</title>
+</head>
+<body>
+    <h2>Student Confirmation</h2>
+    <p>Student Name: <span th:text="${student.firstName} + ' ' + ${student.lastName} "></span></p>
+    <p>Province: <span th:text="${student.province}"></span></p>
+    <p>Favorite programming language: <span th:text="${student.favoriteLanguage}"></span></p>
+    <p>Your Courses: <span th:text="${student.takenCourses}"></span></p> <!-- to use ul.li instead -->
+</body>
+</html>
