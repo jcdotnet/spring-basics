@@ -1,0 +1,25 @@
+{
+  "name": "spring-boot-tailwindcss",
+  "version": "1.0.0",
+  "description": "Spring Boot & Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/main/resources/static/css/app-style.css -o ./src/main/resources/static/css/frontend-style.min.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/main/resources/static/css/app-style.css -o ./src/main/resources/static/css/frontend-style.min.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcdotnet/spring-basics.git"
+  },
+  "author": "José Carlos Román Rubio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcdotnet/spring-basics/issues"
+  },
+  "homepage": "https://github.com/jcdotnet/spring-basics#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

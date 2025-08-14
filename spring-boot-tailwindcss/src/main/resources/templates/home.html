@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tailwind CSS Demo Project</title>
+    <link rel="stylesheet" th:href="@{/css/frontend-style.min.css}">
+</head>
+<body>
+
+    <div class="mx-10 my-10 p-5 bg-white rounded overflow-hidden shadow-lg md:max-w-3/4 md:mx-auto">
+        <h1>Tailwind CSS Demo Project</h1>
+        <p>This page will show you how to style your Spring Boot application with Tailwind CSS</p>
+
+        <h2> Creating your Spring Boot project </h2>
+        <p> We have created the Spring Boot project with Maven for this demo. </p>
+        <p> Dependencies needed: <code>Spring Web, Thymeleaf</code> </p>
+
+        <h2> Adding Tailwind CSS </h2>
+
+        <p> Once the project is created, we can install <a href="https://tailwindcss.com/docs/installation/tailwind-cli">Tailwind CSS</a> via npm.</p>
+
+        <div class="font-bold text-xl mb-2">Installation process</div>
+        <ol class="list-decimal">
+            <li class="ml-5"><p>Create npm project in the root folder</p></li>
+            <li class="ml-5"><p>Install <code>tailwindcss</code> and <code>@tailwindcss/cli</code> via npm</p></li>
+            <li class="ml-5"><p>Create npm project (e.g. in the root folder)</p></li>
+            <li class="ml-5"><p>Create the <code>app-style.css</code> file in the <code>resources/static/css</code> folder</p></li>
+        </ol>
+
+        <div class="font-bold text-xl mb-2">Build process</div>
+
+        <p>Add the <code>@import "tailwindcss";</code> import to the <code>app-style.css</code> file.</p>
+
+        <p>Create the "build" script for the Tailwind CLI build process in the <code>package.json</code> file.</p>
+        <pre class="mb-3"><code>"build": "npx @tailwindcss/cli -i ./src/main/resources/static/css/app-style.css -o ./src/main/resources/static/css/frontend-style.min.css --minify</code></pre>
+
+        <p> This will scan our source files for classes and will build our CSS, creating the <code>frontend-style.min.css</code> minified CSS file. </p>
+
+        <p>Additionally, we can create the "watch" script for development to rebuild the non-minified built CSS file based on any change in our source files.</p>
+        <pre class="mb-3">"watch": "npx @tailwindcss/cli -i ./src/main/resources/static/css/app-style.css -o ./src/main/static/resources/css/frontend-style.min.css --watch"</pre>
+
+        <p>The source files to scan can be set in our <code>app-style.css</code> file:</p>
+
+        <pre>
+        @import "tailwindcss";
+        @source "../java/**";
+        </pre>
+        <p><strong>Important:</strong> don't forget to add the link to <code>frontend-style.min.css</code> (built CSS) to the HTML files.</p>
+        <p>In case we want to build the CSS file from maven instead of manually, we can use the <a href="https://github.com/eirslett/frontend-maven-plugin">frontend maven plugin</a></p>
+    </div>
+
+</body>
+</html>
