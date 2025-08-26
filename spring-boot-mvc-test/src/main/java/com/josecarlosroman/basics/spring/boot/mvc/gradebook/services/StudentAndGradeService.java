@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class StudentAndGradeService {
@@ -17,5 +19,16 @@ public class StudentAndGradeService {
         HogwartsStudent student = new HogwartsStudent(firstName, lastName, email);
         student.setId(0);
         studentDAO.save(student);
+    }
+
+    public boolean checkIfStudentExists(int id) {
+        Optional<HogwartsStudent> student = studentDAO.findById(id);
+        return student.isPresent();
+    }
+
+    public void deleteStudent(int id) {
+        if (checkIfStudentExists(id)) {
+            studentDAO.deleteById(id);
+        }
     }
 }
