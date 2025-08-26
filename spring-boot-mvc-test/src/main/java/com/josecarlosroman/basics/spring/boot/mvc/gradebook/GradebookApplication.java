@@ -16,8 +16,8 @@ public class GradebookApplication {
 
 	@Bean
 	@Scope(value = "prototype")
-    CollegeStudent getCollegeStudent() {
-		return new CollegeStudent();
+    HogwartsStudent getCollegeStudent() {
+		return new HogwartsStudent();
 	}
 
 	@Bean

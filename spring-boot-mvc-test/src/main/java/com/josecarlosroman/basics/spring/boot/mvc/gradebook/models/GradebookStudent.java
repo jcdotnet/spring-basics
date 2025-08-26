@@ -1,16 +1,16 @@
 package com.josecarlosroman.basics.spring.boot.mvc.gradebook.models;
 
-public class GradebookCollegeStudent extends CollegeStudent{
+public class GradebookStudent extends HogwartsStudent {
 
     private int id;
 
     private StudentGrades studentGrades;
 
-    public GradebookCollegeStudent(String firstname, String lastname, String emailAddress) {
+    public GradebookStudent(String firstname, String lastname, String emailAddress) {
         super(firstname, lastname, emailAddress);
     }
 
-    public GradebookCollegeStudent(int id, String firstname, String lastname, String emailAddress, StudentGrades studentGrades) {
+    public GradebookStudent(int id, String firstname, String lastname, String emailAddress, StudentGrades studentGrades) {
         super(firstname, lastname, emailAddress);
         this.studentGrades = studentGrades;
         this.id = id;
