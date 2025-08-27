@@ -25,8 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -110,6 +109,20 @@ public class GradebookControllerTest {
         // passed // we are checking now the data too (not only the view name)
         HogwartsStudent student = studentDAO.findByEmailAddress("harrypotter@owls.com");
         assertNotNull(student, "Student should be found");
+    }
+    @Test
+    public void deleteStudentHttpRequest() throws Exception {
+        // testing we have a student to delete
+        assertTrue(studentDAO.findById(1).isPresent());
+
+        // setting up request to delete a student
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/delete/student/1"))
+                .andExpect(status().isOk()).andReturn();
+        ModelAndView modelAndView = mvcResult.getModelAndView();
+
+        //testing
+        ModelAndViewAssert.assertViewName(modelAndView,"index");
+        assertFalse(studentDAO.findById(1).isPresent());
     }
 
     @AfterEach
