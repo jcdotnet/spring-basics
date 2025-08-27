@@ -125,6 +125,18 @@ public class GradebookControllerTest {
         assertFalse(studentDAO.findById(1).isPresent());
     }
 
+    @Test
+    public void deleteStudentHttpRequestErrorPage() throws Exception {
+        // we are going to delete a student that does not exist
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/delete/student/{id}", 0))
+                // in the sample data we have a student with id 1 and no students with id 0
+                .andExpect(status().isOk()).andReturn(); // error
+        ModelAndView modelAndView = mvcResult.getModelAndView();
+
+        //testing // will fail: view name is index
+        ModelAndViewAssert.assertViewName(modelAndView,"error");
+    }
+
     @AfterEach
     public void afterEach() {
         jdbc.execute("DELETE FROM student");
