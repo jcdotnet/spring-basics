@@ -3,18 +3,20 @@ package com.josecarlosroman.basics.spring.boot.mvc.gradebook;
 import com.josecarlosroman.basics.spring.boot.mvc.gradebook.models.HogwartsStudent;
 import com.josecarlosroman.basics.spring.boot.mvc.gradebook.services.StudentAndGradeService;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.ModelAndViewAssert;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.assertj.MockMvcTester;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,12 +26,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @TestPropertySource("/application.properties")
 @AutoConfigureMockMvc
 @SpringBootTest
 public class GradebookControllerTest {
+
+    private static MockHttpServletRequest request;
 
     @Autowired
     private JdbcTemplate jdbc;
@@ -39,6 +44,14 @@ public class GradebookControllerTest {
 
     @Mock
     private StudentAndGradeService serviceMock;
+
+    @BeforeAll
+    public static void beforeAll() {
+        request = new MockHttpServletRequest();
+        request.setParameter("firstname", "Harry");
+        request.setParameter("lastname", "Potter");
+        request.setParameter("emailAddress", "harrypotter@owls.com");
+    }
 
     @BeforeEach
     public void beforeEach() {
@@ -64,6 +77,23 @@ public class GradebookControllerTest {
 
         // testing request
         ModelAndViewAssert.assertViewName(modelAndView, "index");
+    }
+
+    @Test
+    public void createStudentHttp() throws Exception {
+        // setting up request
+        MvcResult mvcResult = mockMvc.perform(post("/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .param("firstname", request.getParameterValues("firstname"))
+                .param("lastname", request.getParameterValues("lastname"))
+                .param("emailAddress", request.getParameterValues("emailAddress")))
+                .andExpect(status().isOk()).andReturn();
+        // failed: expected 200, actual 405
+        // TDD: we haven't implemented the code yet (post mapping in the controller)
+
+        ModelAndView modelAndView = mvcResult.getModelAndView();
+        ModelAndViewAssert.assertViewName(modelAndView, "index");
+
     }
 
     @AfterEach
