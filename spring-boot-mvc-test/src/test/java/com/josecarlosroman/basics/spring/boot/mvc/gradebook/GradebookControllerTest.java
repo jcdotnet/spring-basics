@@ -1,6 +1,7 @@
 package com.josecarlosroman.basics.spring.boot.mvc.gradebook;
 
 import com.josecarlosroman.basics.spring.boot.mvc.gradebook.models.HogwartsStudent;
+import com.josecarlosroman.basics.spring.boot.mvc.gradebook.repository.StudentDAO;
 import com.josecarlosroman.basics.spring.boot.mvc.gradebook.services.StudentAndGradeService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -25,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -44,6 +46,9 @@ public class GradebookControllerTest {
 
     @Mock
     private StudentAndGradeService serviceMock;
+
+    @Autowired
+    private StudentDAO studentDAO;
 
     @BeforeAll
     public static void beforeAll() {
@@ -88,12 +93,13 @@ public class GradebookControllerTest {
                 .param("lastname", request.getParameterValues("lastname"))
                 .param("emailAddress", request.getParameterValues("emailAddress")))
                 .andExpect(status().isOk()).andReturn();
-        // failed: expected 200, actual 405
-        // TDD: we haven't implemented the code yet (post mapping in the controller)
 
         ModelAndView modelAndView = mvcResult.getModelAndView();
         ModelAndViewAssert.assertViewName(modelAndView, "index");
 
+        // passed // we are checking now the data too (not only the view name)
+        HogwartsStudent student = studentDAO.findByEmailAddress("harrypotter@owls.com");
+        assertNotNull(student, "Student should be found");
     }
 
     @AfterEach
