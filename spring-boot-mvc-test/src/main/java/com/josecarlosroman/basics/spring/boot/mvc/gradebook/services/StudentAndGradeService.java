@@ -21,6 +21,10 @@ public class StudentAndGradeService {
         studentDAO.save(student);
     }
 
+    public Iterable<HogwartsStudent> getGradebook() {
+        return studentDAO.findAll();
+    }
+
     public boolean checkIfStudentExists(int id) {
         Optional<HogwartsStudent> student = studentDAO.findById(id);
         return student.isPresent();

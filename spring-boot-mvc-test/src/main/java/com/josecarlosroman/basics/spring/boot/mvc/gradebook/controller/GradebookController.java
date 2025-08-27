@@ -2,6 +2,7 @@ package com.josecarlosroman.basics.spring.boot.mvc.gradebook.controller;
 
 import com.josecarlosroman.basics.spring.boot.mvc.gradebook.models.Gradebook;
 import com.josecarlosroman.basics.spring.boot.mvc.gradebook.models.*;
+import com.josecarlosroman.basics.spring.boot.mvc.gradebook.services.StudentAndGradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +14,14 @@ public class GradebookController {
 	@Autowired
 	private Gradebook gradebook;
 
+    @Autowired
+    private StudentAndGradeService service;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getStudents(Model m) {
-		return "index";
+		Iterable<HogwartsStudent> students = service.getGradebook();
+        m.addAttribute("students", students);
+        return "index";
 	}
 
 
