@@ -85,7 +85,16 @@ public class GradebookControllerTest {
     }
 
     @Test
-    public void createStudentHttp() throws Exception {
+    public void createStudentHttpRequest() throws Exception {
+        HogwartsStudent studentOne = new HogwartsStudent("Hermione", "Granger", "hermione@owls.com");
+        List<HogwartsStudent> students = new ArrayList<>(Arrays.asList(studentOne));
+
+        // setting mock for the students service
+        when(serviceMock.getGradebook()).thenReturn(students);
+
+        // testing
+        assertIterableEquals(students, serviceMock.getGradebook());
+
         // setting up request
         MvcResult mvcResult = mockMvc.perform(post("/")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -93,8 +102,9 @@ public class GradebookControllerTest {
                 .param("lastname", request.getParameterValues("lastname"))
                 .param("emailAddress", request.getParameterValues("emailAddress")))
                 .andExpect(status().isOk()).andReturn();
-
         ModelAndView modelAndView = mvcResult.getModelAndView();
+
+        // testing
         ModelAndViewAssert.assertViewName(modelAndView, "index");
 
         // passed // we are checking now the data too (not only the view name)
