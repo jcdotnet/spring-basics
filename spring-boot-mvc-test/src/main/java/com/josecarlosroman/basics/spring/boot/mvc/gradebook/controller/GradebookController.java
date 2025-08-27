@@ -34,7 +34,10 @@ public class GradebookController {
     }
 
     @GetMapping("/delete/student/{id}")
-    public String deletStudent(@PathVariable int id, Model m) {
+    public String deleteStudent(@PathVariable int id, Model m) {
+
+        if (!service.checkIfStudentExists(id)) return "error";
+
         service.deleteStudent(id);
         Iterable<HogwartsStudent> students = service.getGradebook();
         m.addAttribute("students", students);
