@@ -10,6 +10,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.TestPropertySource;
@@ -36,13 +37,29 @@ public class StudentAndGradeServiceTest {
     @Autowired
     private HistoryGradesDAO historyGradesDAO;
 
+    @Value("${sql.script.create.student}")
+    private String sqlAddStudent;
+    @Value("${sql.script.create.grade.math}")
+    private String sqlAddMathGrade;
+    @Value("${sql.script.create.grade.science}")
+    private String sqlAddScienceGrade;
+    @Value("${sql.script.create.grade.history}")
+    private String sqlAddHistoryGrade;
+    @Value("${sql.script.delete.student}")
+    private String sqlDeleteStudent;
+    @Value("${sql.script.delete.grade.math}")
+    private String sqlDeleteMathGrade;
+    @Value("${sql.script.delete.grade.science}")
+    private String sqlDeleteScienceGrade;
+    @Value("${sql.script.delete.grade.history}")
+    private String sqlDeleteHistoryGrade;
+
     @BeforeEach // let's insert sample data in the database
     public void setupDatabase() {
-        jdbc.execute("insert into student(firstname, lastname, email_address) values ('Draco', 'Malfoy', 'dracomalfoyr@owls.com')");
-
-        jdbc.execute("insert into math_grade(student_id, grade) values ('1', '100')");
-        jdbc.execute("insert into science_grade(student_id, grade) values ('1', '100')");
-        jdbc.execute("insert into history_grade(student_id, grade) values ('1', '100')");
+        jdbc.execute(sqlAddStudent);
+        jdbc.execute(sqlAddMathGrade);
+        jdbc.execute(sqlAddScienceGrade);
+        jdbc.execute(sqlAddHistoryGrade);
     }
 
     @Test
@@ -162,14 +179,9 @@ public class StudentAndGradeServiceTest {
 
     @AfterEach
     public void setupAfterTransaction() {
-        jdbc.execute("DELETE FROM student");
-        jdbc.execute("DELETE FROM math_grade");
-        jdbc.execute("DELETE FROM science_grade");
-        jdbc.execute("DELETE FROM history_grade");
-
-        jdbc.execute("ALTER TABLE student ALTER COLUMN id RESTART WITH 1");
-        jdbc.execute("ALTER TABLE math_grade ALTER COLUMN id RESTART WITH 1");
-        jdbc.execute("ALTER TABLE science_grade ALTER COLUMN id RESTART WITH 1");
-        jdbc.execute("ALTER TABLE history_grade ALTER COLUMN id RESTART WITH 1");
+        jdbc.execute(sqlDeleteStudent);
+        jdbc.execute(sqlDeleteMathGrade);
+        jdbc.execute(sqlDeleteScienceGrade);
+        jdbc.execute(sqlDeleteHistoryGrade);
     }
 }
