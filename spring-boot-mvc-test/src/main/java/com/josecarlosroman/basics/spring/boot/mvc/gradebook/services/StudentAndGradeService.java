@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -149,5 +150,28 @@ public class StudentAndGradeService {
         return new GradebookStudent(student.get().getId(),
                 student.get().getFirstname(), student.get().getLastname(), student.get().getEmailAddress(),
                 studentGrades);
+    }
+
+    // stub method for cleaning up the project code
+    public void configureStudentInformationModel(int id, Model m) {
+        GradebookStudent gradebook = studentInformation(id);
+        m.addAttribute("student", gradebook);
+        if (!gradebook.getStudentGrades().getMathGradeResults().isEmpty()) {
+            m.addAttribute("mathAverage", gradebook.getStudentGrades().findGradePointAverage(
+                    gradebook.getStudentGrades().getMathGradeResults()
+            ));
+        } else m.addAttribute("mathAverage", "N/A");
+
+        if (!gradebook.getStudentGrades().getScienceGradeResults().isEmpty()) {
+            m.addAttribute("scienceAverage", gradebook.getStudentGrades().findGradePointAverage(
+                    gradebook.getStudentGrades().getScienceGradeResults()
+            ));
+        } else m.addAttribute("scienceAverage", "N/A");
+
+        if (!gradebook.getStudentGrades().getHistoryGradeResults().isEmpty()) {
+            m.addAttribute("historyAverage", gradebook.getStudentGrades().findGradePointAverage(
+                    gradebook.getStudentGrades().getHistoryGradeResults()
+            ));
+        } else m.addAttribute("historyAverage", "N/A");
     }
 }
